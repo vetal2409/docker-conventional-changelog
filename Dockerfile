@@ -4,4 +4,4 @@ MAINTAINER Vitalii Sydorenko <vetal.sydo@gmail.com>
 
 RUN apk update && apk upgrade && \
     apk add --no-cache bash git
-RUN npm install -g git-semver-tags conventional-changelog-angular conventional-recommended-bump
+RUN npm install -g git-semver-tags conventional-changelog-conventionalcommits conventional-recommended-bump
