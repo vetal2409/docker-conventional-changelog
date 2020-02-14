@@ -2,7 +2,7 @@ const latestSemver = require('./lib/latest-semver');
 const recommendedBump = require('./lib/recommended-bump');
 const bumpVersion = require('./lib/bump-version');
 const tagGenerator = require('./lib/tag-generator');
-const annotatedTag = require('./lib/annotated-tag');
+const annotatedTag = require('../../depricated/annotated-tag');
 
 
 (async function() {

@@ -4,6 +4,7 @@ const recommendedBump = require('./lib/recommended-bump');
 const bumpVersion = require('./lib/bump-version');
 const tagGenerator = require('./lib/tag-generator');
 const changelog = require('./lib/changelog');
+const cli = require('yargs');
 
 
 function addTagPrefixOption(yargs) {
@@ -17,7 +18,7 @@ function addTagPrefixOption(yargs) {
         });
 }
 
-const cli = require('yargs')
+const args = cli
     .usage('Usage: $0 <command> [options]')
     .command('latestVersion [tagPrefix]', 'Get the latest version extracted from git tags', (yargs) => {
         addTagPrefixOption(yargs)
@@ -59,7 +60,6 @@ const cli = require('yargs')
                 default: false
             })
     }, (argv) => {
-        console.log(argv.tagPrefix);
         console.log(tagGenerator(argv.ver, argv.tagPrefix, argv.includedParent).join(' '));
     })
     .command('changelog', 'Generate changelog', (yargs) => {
